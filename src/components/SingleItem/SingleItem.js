@@ -13,13 +13,13 @@ const SingleItem = ({ current, addToCart }) => {
         alt={current.title}
       />
       <div className={styles.singleItem__details}>
-        <p className={styles.details__title}>{current.title}</p>
-        <p className={styles.details__description}>{current.description}</p>
-        <p className={styles.details__price}>$ {current.price}</p>
+        <p className="text-2xl font-bold text-pink-500 ">{current.title}</p>
+        <p className="text-x font-sans">{current.description}</p>
+        <p className="text-2xl font-bold ">$ {current.price}</p>
 
         <button
           onClick={() => addToCart(current.id)}
-          className={styles.details__addBtn}
+          className="bg-cyan-300 rounded-md w-96 h-11 text-black hover:bg-sky-700 hover:text-white  "
         >
           Add To Cart
         </button>

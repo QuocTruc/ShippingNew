@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Cart.module.css";
 
 import { connect } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import CartItem from "./CartItem/CartItem";
 import { Link } from "react-router-dom";
 const onRestart = () => window.location.reload();
@@ -20,9 +21,9 @@ const Cart = ({ cart }) => {
   //   }, 1300);
   // }
 
-  const handleClick = () => {
-    toast("Do you want to purchase ?");
-  };
+  // const handleClick = (e) => {
+  //   toast("Do you want to purchase ?");
+  // };
   useEffect(() => {
     let items = 0;
     let price = 0;
@@ -35,7 +36,7 @@ const Cart = ({ cart }) => {
     setTotalItems(items);
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
-
+  const notify = () => toast("Here is your toast.");
   return (
     <>
       <div className="lg:col-span-12 my-px">
@@ -77,16 +78,14 @@ const Cart = ({ cart }) => {
         </button> */}
 
           <div className="col-span-12">
-            <Link to="/products">
-              <button
-                type="button"
-                //  onClick={onRestart}
-                className="flex items-center justify-center duration-100 shadow-md gap-2 px-4 py-2 text-md rounded-md   
+            <button
+              type="button"
+              onClick={onRestart}
+              className="flex items-center justify-center duration-100 shadow-md gap-2 px-4 py-2 text-md rounded-md   
     bg-blue-500 text-white hover:bg-blue-400 false w-full"
-              >
-                Checkout
-              </button>
-            </Link>
+            >
+              Checkout
+            </button>
           </div>
         </div>
       </div>

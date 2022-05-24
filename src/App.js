@@ -15,16 +15,16 @@ import Cart from "./components/Cart/Cart";
 import SingleItem from "./components/SingleItem/SingleItem";
 import Home from "./components/Home";
 import Reviews from "./components/Reviews";
+import "react-toastify/dist/ReactToastify.css";
 
 function App({ current }) {
   return (
     <Router>
       <div className="app">
-      
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/reviews" element={<Reviews/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/reviews" element={<Reviews />} />
 
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />

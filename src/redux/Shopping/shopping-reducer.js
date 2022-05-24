@@ -1,7 +1,13 @@
 /* eslint-disable no-unused-vars */
 import * as actionTypes from "./shopping-types";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 
+import axios from "axios";
+// const [product, setProduct] = useState("");
+
+axios.get("http://webcode.me").then((resp) => {
+  console.log(resp.data);
+});
 const INITIAL_STATE = {
   products: [
     {
